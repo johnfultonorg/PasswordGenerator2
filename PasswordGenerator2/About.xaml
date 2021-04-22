@@ -1,0 +1,28 @@
+﻿<Window x:Class="PasswordGenerator2.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordGenerator2"
+        mc:Ignorable="d"
+         Title="About" Height="450" Width="750">
+    <Grid  Loaded="OnLoad" Name="root">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"  Height="370" Margin="5,5,5,5" BorderThickness="0.5" BorderBrush="Black">
+            <TextBlock Name="txtAbout" />
+        </Border>
+
+    
+            <StackPanel  Grid.Row="1" HorizontalAlignment="Right"  Orientation="Horizontal" Margin="5,5,5,5">
+            <Button Name="btnClose" Click="btnClose_Click" >Close</Button>
+            </StackPanel>
+  
+    
+
+    </Grid>
+</Window>
