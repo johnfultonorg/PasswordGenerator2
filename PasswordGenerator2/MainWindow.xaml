@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordGenerator2"
         mc:Ignorable="d"
-         Title="Password Generator" Height="370" Width="345">
+         Title="Password Generator" Height="380" Width="345">
     <Grid Margin="10">
 
         <Grid.ColumnDefinitions>
@@ -39,6 +39,9 @@
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="1" Margin="5,5,5,5">
+            <Label Width="120"  HorizontalAlignment="Left" Target="{Binding ElementName=txtCount}">Approximate Size</Label>
+            <TextBox Width="30"   HorizontalAlignment="center" Name="txtCount">Size </TextBox>
+           
             <CheckBox  IsChecked="True" Name="cbNumber">include number</CheckBox>
             <CheckBox IsChecked="True" Name="cbCapital">include capital</CheckBox>
             <CheckBox  IsChecked="True" Name="cbSpecial">include special</CheckBox>

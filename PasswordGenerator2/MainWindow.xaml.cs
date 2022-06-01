@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PasswordGenerator2
 {
@@ -24,7 +12,7 @@ namespace PasswordGenerator2
         public MainWindow()
         {
             InitializeComponent();
-
+            txtCount.Text = "12";
             rbPronouncable.IsChecked = true;
             btnGenerate.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
             btnCopy.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
@@ -53,9 +41,20 @@ namespace PasswordGenerator2
                 thisType = Password.PasswordType.Xkcd;
             }
 
+            int countAsInt = 0;
 
+            if (int.TryParse(txtCount.Text, out countAsInt))
+            {
+                int.TryParse(txtCount.Text, out countAsInt);
+            }
+            else
+            {
+                countAsInt = 0;
+            }
+
+            
             string result = newPassword.getPassword(thisType, (bool)cbNumber.IsChecked,
-                (bool)cbCapital.IsChecked, (bool)cbSpecial.IsChecked);
+                (bool)cbCapital.IsChecked, (bool)cbSpecial.IsChecked, countAsInt);
 
             tbDisplay.Text += result + "\r\n";
             tbDisplay.ScrollToEnd();

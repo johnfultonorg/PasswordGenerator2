@@ -29,7 +29,7 @@ namespace PasswordGenerator2
         {
 
             var appSettings = ConfigurationManager.AppSettings;
-            string version = appSettings["Version"] ?? "2.01";
+            string version = appSettings["Version"] ?? "2.02";
 
             int year = DateTime.Now.Year;
 

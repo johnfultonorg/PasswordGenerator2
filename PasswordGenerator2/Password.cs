@@ -9,13 +9,17 @@ namespace PasswordGenerator2
     class Password
     {
         Random thisRandom = new Random();
-        const int LENGTH = 12;
 
         public enum PasswordType { Simple = 0, Pronouncable = 1, Xkcd = 2 };
 
         public string getPassword(PasswordType type, Boolean digit,
-            Boolean upperCase, Boolean specialChar)
+            Boolean upperCase, Boolean specialChar, int count)
         {
+
+            if (count == 0)
+            {
+                count = 12;
+            }
             string result = "";
 
             if (type == PasswordType.Simple)
@@ -35,7 +39,7 @@ namespace PasswordGenerator2
                 }
 
                 // any old characters
-                for (int x = 0; x < LENGTH; x++)
+                for (int x = 0; x < count; x++)
                 {
                     result += getLowerCase();
                 }
@@ -66,7 +70,7 @@ namespace PasswordGenerator2
 
                 //english phonemes
                 string english = string.Empty;
-                while (english.Length < LENGTH)
+                while (english.Length < count)
                 {
                     english += getPhoneme();
                 }
