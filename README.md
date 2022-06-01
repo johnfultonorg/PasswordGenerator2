@@ -9,3 +9,7 @@ Resources:
 - https://www.c-sharpcorner.com/UploadFile/1e050f/grid-layout-in-wpf/
 
 
+# ToDo
+
+- limit special characters to eliminate " <>()[];&"
+- set length of result
